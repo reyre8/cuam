@@ -1,0 +1,3 @@
+<?php
+
+print 'cuam libs';
