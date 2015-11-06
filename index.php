@@ -1,1 +1,3 @@
-index page
+<?php 
+
+echo 'Hi';
