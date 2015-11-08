@@ -1,1 +1,10 @@
-cuam css file
+.top-header-bar {
+    display: block;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-color: #0275d8;
+    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+    font-size: 14px;
+}
