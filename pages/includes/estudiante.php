@@ -1,5 +1,5 @@
 <?php
 
-include 'pages/common/header.php';
+echo 'Estudiante';
 
-Echo 'Pagina de estudiante';
+

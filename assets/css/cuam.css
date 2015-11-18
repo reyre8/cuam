@@ -1,10 +1,52 @@
+.tr-head { 
+    background-color: #0275d8 !important;
+    color: #fff;
+}
+
+.font-site, .font-site > table {
+    font-size: 14px !important;
+}
+
 .top-header-bar {
     display: block;
     padding: 15px 20px;
-    font-weight: bold;
     color: #fff;
     text-align: center;
     background-color: #0275d8;
-    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
-    font-size: 14px;
+    font-weight: bold;
 }
+.table-btn-container {
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+.info-container { 
+    padding: 15px 15px 5px 15px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.pull-center {
+     text-align: center;
+}
+
+i.editar, i.eliminar {
+    cursor: pointer;
+}
+
+.message-container { 
+    padding: 1px 30px 5px 30px;
+    margin-bottom: 15px;
+}
+
+.message-close-icon {
+    float:right;
+    padding-top: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
