@@ -49,7 +49,7 @@
                     switch(response.status) {
                         case 200:
                             message(null, 'success', 'Eliminar estudiante', response.data);
-                            break
+                            break;
                         default:
                             message(null, 'error', 'Eliminar estudiante', response.data);
                             break;

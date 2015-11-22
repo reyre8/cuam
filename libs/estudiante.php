@@ -96,7 +96,7 @@ function eliminarEstudiante($data) {
 }
 
 /*
- * Funcion para eliminar un estudiante
+ * Funcion para consultar un estudiante
  *  */
 function consultarEstudiante($data) {
     $estudiante = consulta('usuario', array(), array('id' => $data['id']), true);

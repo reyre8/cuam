@@ -15,10 +15,10 @@
     </div>
     <ul class="nav navbar-nav">
         <li>
-            <a href="/cuam/pages/includes/estudiante.php">Estudiante</a>
+            <a href="/cuam/pages/includes/estudiante.php">Estudiantes</a>
         </li>
         <li>
-            <a href="">Menciones</a>
+            <a href="/cuam/pages/includes/mencion.php">Menciones</a>
         </li>
         <li class="active">
             <a href="">Inscripciones</a>
