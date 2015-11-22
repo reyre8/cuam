@@ -15,7 +15,7 @@
     </div>
     <ul class="nav navbar-nav">
         <li>
-            <a href="pages/includes/estudiante.php">Estudiante</a>
+            <a href="/cuam/pages/includes/estudiante.php">Estudiante</a>
         </li>
         <li>
             <a href="">Menciones</a>
