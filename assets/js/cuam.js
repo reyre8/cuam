@@ -10,7 +10,6 @@
     
     });
     
-    
     // Creates a message at the top of the page
     function message(container, type, title, message) {
         
