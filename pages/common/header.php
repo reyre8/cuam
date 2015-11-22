@@ -1,7 +1,9 @@
-<script src="dependencies/jquery-1.11.3.min.js"></script>
-<script src="dependencies/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/cuam.css" />
-<link rel="stylesheet" type="text/css" href="dependencies/bootstrap-3.3.5/css/bootstrap.min.css" />
+<?php define('ROOT_PATH', '/var/www/html/cuam/'); ?>
+<script src="/cuam/dependencies/jquery-1.11.3.min.js"></script>
+<script src="/cuam/dependencies/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/cuam/assets/css/cuam.css" />
+<link rel="stylesheet" type="text/css" href="/cuam/dependencies/bootstrap-3.3.5/css/bootstrap.min.css" />
+<script src="/cuam/assets/js/cuam.js"></script>
 
 <div class="top-header-bar font-site">Servicios al Estudiante (CUAM)</div>
 <div class="container">
@@ -27,10 +29,14 @@
     </ul>
 </div>
 
-<div style="background-color: #6f5499; color: #FFF; padding-bottom: 15px; margin-bottom: 15px;">
+<div class="sub-header">
     <div class="container">
         <h1>Servicios al estudiante (CUAM)</h1>
         <p>Administracion de procesos de inscripciones, menciones, estudiantes y usuarios</p>
     </div>
 </div>
 <div class="container" id="message-container"></div>
+
+<?php
+
+include ROOT_PATH . '/libs/cuam-lib.php';

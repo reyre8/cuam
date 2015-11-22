@@ -12,7 +12,7 @@
     padding: 15px 20px;
     color: #fff;
     text-align: center;
-    background-color: #0275d8;
+    background: linear-gradient(to right, #3366ff 0%, #55aaff 100%);
     font-weight: bold;
 }
 .table-btn-container {
@@ -46,7 +46,9 @@ i.editar, i.eliminar {
     cursor: pointer;
 }
 
-
-
-
-
+.sub-header { 
+    background: linear-gradient(to right, #296ad4 0%, #4e8ef7 100%);
+    color: #FFF; 
+    padding-bottom: 15px; 
+    margin-bottom: 15px;
+}
