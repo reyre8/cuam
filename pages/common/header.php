@@ -27,9 +27,6 @@
             <a href="/cuam/pages/includes/inscripcion.php">Inscripciones</a>
         </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Salir</a></li>
-    </ul>
 </div>
 
 <div class="sub-header">
