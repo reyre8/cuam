@@ -32,7 +32,7 @@
 <div class="sub-header">
     <div class="container">
         <h1>Servicios al estudiante (CUAM)</h1>
-        <p>Administracion de procesos de inscripciones, menciones, estudiantes y usuarios</p>
+        <p>Administracion de procesos de inscripciones, menciones, tesis de grado, estudiantes y usuarios</p>
     </div>
 </div>
 <div class="container" id="message-container"></div>
