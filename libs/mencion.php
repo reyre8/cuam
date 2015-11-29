@@ -2,7 +2,6 @@
 
 include 'cuam-lib.php';
 
-
 function validarMencionInscrita($mencionId) {
     
     $link = connect();
@@ -19,7 +18,6 @@ function validarMencionInscrita($mencionId) {
     }
     return false;
 }
-
 
 /*
  * Funcion para validar una mencion

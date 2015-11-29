@@ -2,6 +2,28 @@
 
 include 'cuam-lib.php';
 
+function validarInscripcionPorEstudiante($data) {
+    
+    $link = connect();
+    $sql = 'SELECT i.id' .
+           '  FROM inscripcion i' .
+           ' WHERE i.id_mencion = ' . quoteDb($data['select-mencion']) .
+           '   AND i.id_usuario = ' . quoteDb($data['select-estudiante']);
+    
+    if(array_key_exists('input-inscripcion-id', $data) && !empty($data['input-inscripcion-id'])) {
+        $sql .= ' AND i.id != ' . quoteDb($data['input-inscripcion-id']);
+    }
+    
+    $result = mysql_query($sql, $link) or respond(400, mysql_error());
+    $arrayResult = array();
+    
+    while ($row = mysql_fetch_assoc($result)) {
+        return true;
+        break;
+    }
+    return false;
+}
+
 /*
  * Funcion para validar una inscripcion
  *  */
@@ -16,6 +38,9 @@ function validarInscripcion($data) {
     }
     if(empty($data['input-fechadeinscripcion'])) {
         array_push($error, 'El campo Fecha de Inscripcion es obligatorio.');
+    }
+    if(validarInscripcionPorEstudiante($data)) {
+        array_push($error, 'El estudiante ya se encuentra inscrito en esta mencion.');
     }
     return $error;
 }
