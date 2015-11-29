@@ -57,3 +57,46 @@ i.editar, i.eliminar {
     text-align: center;
     font-size: 18px;
 }
+
+.href-index {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.href-index:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.icon-index {
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+.sub-header-index { 
+    padding-left: 10px;
+}
+
+.box { 
+    background-color: #e9e9e9;
+    padding: 5px;
+    border-color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.box:hover {
+    background-color: #f2ed65;
+    border-color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.box > a, .box > a:hover { 
+    text-decoration: none;
+    color: #333;
+}

@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/cuam/dependencies/jquery-datetime-picker/css/bootstrap-datetimepicker.min.css" />
 <script src="/cuam/assets/js/cuam.js"></script>
 
-<div class="top-header-bar font-site">Servicios al Estudiante (CUAM)</div>
+<div class="top-header-bar font-site"><a class="href-index" href="/cuam/index.php">Servicios al Estudiante (CUAM)</a></div>
 <div class="container">
     <div class="navbar-header">
         <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
