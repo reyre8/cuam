@@ -93,6 +93,9 @@ $(document).ready(function() {
                               $('#mencion-table').append($(tr));
                           }
 
+                          if(response.data.length == 0) {
+                              $('#mencion-table').append($('<tr><td colspan="3" class="td-center">No hay resultados que mostrar</td></tr>'));
+                          }
 
                             // Eliminar mencion
                             $('#mencion-table tr td i.eliminar').click(function () {

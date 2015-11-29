@@ -65,5 +65,7 @@ function consulta($tabla, $columnas = array(), $filtros = array(), $singleRecord
     return $arrayResult;
 }
 
-
-
+function convertirFecha($fecha) { 
+ $arrFecha = explode('/', $fecha);
+    return $arrFecha[2] . '-' . $arrFecha[1] . '-' . $arrFecha[0];
+}

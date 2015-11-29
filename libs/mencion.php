@@ -2,6 +2,25 @@
 
 include 'cuam-lib.php';
 
+
+function validarMencionInscrita($mencionId) {
+    
+    $link = connect();
+    $sql = 'SELECT i.id' .
+           '  FROM inscripcion i' .
+           ' WHERE i.id_mencion = ' . quoteDb($mencionId);
+    
+    $result = mysql_query($sql, $link) or respond(400, mysql_error());
+    $arrayResult = array();
+    
+    while ($row = mysql_fetch_assoc($result)) {
+        return true;
+        break;
+    }
+    return false;
+}
+
+
 /*
  * Funcion para validar una mencion
  *  */
@@ -56,6 +75,11 @@ function actualizarMencion($data) {
  *  */
 function eliminarMencion($data) {
     $link = connect();
+    
+    if(!empty($data['id']) && validarMencionInscrita($data['id'])) {
+        respond(400, 'La mencion se encuentra asignada a algun estudiante. Para eliminar la mencion primero debe eliminar a los estudiantes asociadas a esta.');
+    }
+    
     $sql = "DELETE FROM mencion WHERE id = {$data['id']}";
     $result = mysql_query($sql, $link) or respond(400, mysql_error());
     respond(200, 'Mencion eliminada de forma satisfactoria.');

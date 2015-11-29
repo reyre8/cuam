@@ -1,8 +1,11 @@
 <?php define('ROOT_PATH', '/var/www/html/cuam/'); ?>
 <script src="/cuam/dependencies/jquery-1.11.3.min.js"></script>
 <script src="/cuam/dependencies/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/cuam/dependencies/moment.js"></script>
+<script src="/cuam/dependencies/jquery-datetime-picker/js/bootstrap-datetimepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/cuam/assets/css/cuam.css" />
 <link rel="stylesheet" type="text/css" href="/cuam/dependencies/bootstrap-3.3.5/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/cuam/dependencies/jquery-datetime-picker/css/bootstrap-datetimepicker.min.css" />
 <script src="/cuam/assets/js/cuam.js"></script>
 
 <div class="top-header-bar font-site">Servicios al Estudiante (CUAM)</div>
@@ -21,7 +24,7 @@
             <a href="/cuam/pages/includes/mencion.php">Menciones</a>
         </li>
         <li class="active">
-            <a href="">Inscripciones</a>
+            <a href="/cuam/pages/includes/inscripcion.php">Inscripciones</a>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

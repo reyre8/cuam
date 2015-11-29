@@ -54,6 +54,17 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="input-fechadenacimiento" class="col-sm-2 control-label required">Fecha de nacimiento</label>
+                        <div class="col-sm-10">
+                            <div class="input-group date" id="input-fechadenacimiento">
+                                <input type="text" name="input-fechadenacimiento" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="input-cedula" class="col-sm-2 control-label required">Cedula</label>
                         <div class="col-sm-10">
                             <input name="input-cedula" type="text" class="form-control" id="input-cedula" placeholder="Indique el numero de cedula (solo numeros sin espacios)">

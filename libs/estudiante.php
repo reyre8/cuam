@@ -2,6 +2,23 @@
 
 include 'cuam-lib.php';
 
+function validarEstudianteInscrito($estudianteId) {
+    
+    $link = connect();
+    $sql = 'SELECT i.id' .
+           '  FROM inscripcion i' .
+           ' WHERE i.id_usuario = ' . quoteDb($estudianteId);
+    
+    $result = mysql_query($sql, $link) or respond(400, mysql_error());
+    $arrayResult = array();
+    
+    while ($row = mysql_fetch_assoc($result)) {
+        return true;
+        break;
+    }
+    return false;
+}
+
 /*
  * Funcion para validar un estudiante
  *  */
@@ -23,11 +40,12 @@ function validarEstudiante($data) {
     if(empty($data['select-sexo'])) {
         array_push($error, 'El campo Sexo es obligatorio.');
     }
-    
+    if(empty($data['input-fechadenacimiento'])) {
+        array_push($error, 'El campo Fecha de Nacimiento es obligatorio.');
+    }
     if (!empty($data['input-email']) && filter_var($data['input-email'], FILTER_VALIDATE_EMAIL) === false) {
         array_push($error, 'El campo Email no es un email valido.');
     }
-    
     return $error;
 }
 
@@ -56,7 +74,7 @@ function crearEstudiante($data) {
             . '         ' . quoteDb($data['input-apellido']) . ','
             . '         ' . quoteDb($data['input-cedula']) . ','
             . '         ' . quoteDb($data['select-sexo']) . ','
-            . '         now(),'
+            . '         ' . quoteDb(convertirFecha($data['input-fechadenacimiento'])) . ','
             . '         ' . quoteDb($data['input-email']) . ')';
 
     $result = mysql_query($sql, $link) or respond(400, mysql_error());
@@ -78,6 +96,7 @@ function actualizarEstudiante($data) {
          . '                    Apellido = ' . quoteDb($data['input-apellido']) . ', '
          . '                    Cedula = ' . quoteDb($data['input-cedula']) . ', '
          . '                    Sexo = ' . quoteDb($data['select-sexo']) . ', '
+         . '         FechaDeNacimiento = ' . quoteDb(convertirFecha($data['input-fechadenacimiento'])) . ','
          . '                    Email = ' . quoteDb($data['input-email'])
          . '  WHERE id = ' . quoteDb($data['input-estudiante-id']);
 
@@ -90,6 +109,11 @@ function actualizarEstudiante($data) {
  *  */
 function eliminarEstudiante($data) {
     $link = connect();
+    
+    if(!empty($data['id']) && validarEstudianteInscrito($data['id'])) {
+        respond(400, 'El estudiante se encuentra inscrito en alguna materia. Para eliminar al estudiante primero debe eliminar las inscripciones asociadas a este.');
+    }
+    
     $sql = "DELETE FROM usuario WHERE id = {$data['id']}";
     $result = mysql_query($sql, $link) or respond(400, mysql_error());
     respond(200, 'Estudiante eliminado de forma satisfactoria.');
@@ -100,15 +124,19 @@ function eliminarEstudiante($data) {
  *  */
 function consultarEstudiante($data) {
     $estudiante = consulta('usuario', array(), array('id' => $data['id']), true);
+    $estudiante['FechaDeNacimiento'] = date('d/m/Y', strtotime($estudiante['FechaDeNacimiento']));
     respond(200, $estudiante);
 }
 
 /*
- * Funcion para eliminar un estudiante
+ * Funcion para listar estudiantes
  *  */
 function listarEstudiantes($data) {
     $rol = consulta('rol', array('id'), array('Nombre' => 'Estudiante'), true);
     $estudiantes = consulta('usuario', array(), array('id_rol' => $rol['id']));
+    foreach ($estudiantes AS $index => $element) { 
+        $estudiantes[$index]['FechaDeNacimiento'] = date('d/m/Y', strtotime($element['FechaDeNacimiento']));
+    }
     respond(200, $estudiantes);
 }
 
